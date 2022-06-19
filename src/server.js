@@ -26,13 +26,28 @@ server.get('/tweets', (req, res) => {
 });
 
 server.post('/tweets', (req, res) => {
+    const {username, tweet} = req.body;
+    if(!username || !tweet) {
+        res.status(400).send('Todos os campos são obrigatórios!')
+        return;
+    }
     tweets.push(req.body);
-    res.send('OK');
+    res.status(201).send('OK');
 });
 
 server.post('/sign-up', (req, res) => {
+    const {username, avatar} = req.body;
+    if(!username|| !avatar) {
+        res.status(400).send('Todos os campos são obrigatórios!')
+        return;
+    }
+    if(user.find(user=> user.username === username)) {
+        res.status(400).send('Já há um usuário cadastrado com esse nome!')
+        return;
+    }
+   
     user.push(req.body);
-    res.send('OK');
+    res.status(201).send('OK');
 });
 
 
