@@ -1,52 +1,70 @@
 import express from 'express';
 import cors from 'cors';
+import fs from 'fs';
+import { request } from 'http';
 const PORT = 5000;
 const server = express();
 server.use([express.json(), cors()]);
 
-const user = [];
+let database = JSON.parse(fs.readFileSync("dataBase.json", "utf-8"));
 
-const tweets = [];
+const getLastNTweets = (page) => {
+    const tweets = [...database.tweets];
+    const lastsTweets = [];
 
-
-const getLast10Tweets = () => {
-    const last10Tweets = [];
-    tweets.slice(-10).forEach( tweet=> {
-        const image = user.find(user => user.username === tweet.username).avatar;
-        last10Tweets.push({...tweet, avatar: image}); 
+    let from = (page -1)*10;
+    let to = from + 10;
+    
+    tweets.reverse().slice(from,to).forEach(tweet => {
+        const image = database.user.find(user => user.username === tweet.username).avatar;
+        lastsTweets.push({ ...tweet, avatar: image });
     })
-    return last10Tweets;
+    return JSON.stringify(lastsTweets);
 };
 
-
 server.get('/tweets', (req, res) => {
-   
+    const page = Number(req.query.page);
+    if(isNaN(page) || page < 1) {
+        res.status(400).send('Informe uma página válida!');
+        return;
+    }
+    res.send(getLastNTweets(page));
+});
 
-    res.send(getLast10Tweets());
+server.get('/tweets/:username', (req, res) => {
+    const userTweets = database.tweets.filter(tweet => tweet.username === req.params.username).map(tweet => {
+        return { ...tweet, ...database.user.find(user => user.username === tweet.username) };
+    });
+    console.log(userTweets)
+    res.send(userTweets);
+
 });
 
 server.post('/tweets', (req, res) => {
-    const {username, tweet} = req.body;
-    if(!username || !tweet) {
+    const { tweet } = req.body;
+    if (!tweet) {
         res.status(400).send('Todos os campos são obrigatórios!')
         return;
     }
-    tweets.push(req.body);
+
+    database.tweets.push(req.body);
+    fs.writeFileSync("dataBase.json", JSON.stringify(database, null, 2));
     res.status(201).send('OK');
 });
 
 server.post('/sign-up', (req, res) => {
-    const {username, avatar} = req.body;
-    if(!username|| !avatar) {
+    const { username, avatar } = req.body;
+    if (!username || !avatar) {
         res.status(400).send('Todos os campos são obrigatórios!')
         return;
     }
-    if(user.find(user=> user.username === username)) {
-        res.status(400).send('Já há um usuário cadastrado com esse nome!')
-        return;
-    }
-   
-    user.push(req.body);
+    // if (database.user.find(user => user.username === username)) {
+    //     res.status(400).send('Já há um usuário cadastrado com esse nome!')
+    //     return;
+    // }
+
+    database.user.push(req.body);
+    fs.writeFileSync("dataBase.json", JSON.stringify(database, null, 2));
     res.status(201).send('OK');
 });
 

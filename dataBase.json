@@ -1,0 +1,114 @@
+{
+  "user": [
+    {
+      "username": "yori",
+      "avatar": "https://i.imgur.com/BptQM1p.png"
+    },
+    {
+      "username": "teste",
+      "avatar": "https://i.imgur.com/BptQM1p.png"
+    },
+    {
+      "username": "yori2",
+      "avatar": "https://i.imgur.com/BptQM1p.png"
+    },
+    {
+      "username": "teste3",
+      "avatar": "https://i.imgur.com/BptQM1p.png"
+    },
+    {
+      "username": "tetetete",
+      "avatar": "https://i.imgur.com/BptQM1p.png"
+    },
+    {
+      "username": "yori",
+      "avatar": "123"
+    }
+  ],
+  "tweets": [
+    {
+      "username": "teste",
+      "tweet": "teste1"
+    },
+    {
+      "username": "teste",
+      "tweet": "teste2"
+    },
+    {
+      "username": "teste",
+      "tweet": "teste3"
+    },
+    {
+      "username": "yori2",
+      "tweet": "teste4"
+    },
+    {
+      "username": "yori2",
+      "tweet": "teste5"
+    },
+    {
+      "username": "yori2",
+      "tweet": "teste6"
+    },
+    {
+      "username": "yori2",
+      "tweet": "teste7"
+    },
+    {
+      "username": "yori2",
+      "tweet": "teste8"
+    },
+    {
+      "username": "yori2",
+      "tweet": "teste9"
+    },
+    {
+      "username": "yori2",
+      "tweet": "teste10"
+    },
+    {
+      "username": "yori2",
+      "tweet": "teste11"
+    },
+    {
+      "username": "tetetete",
+      "tweet": "teste12"
+    },
+    {
+      "username": "tetetete",
+      "tweet": "teste13"
+    },
+    {
+      "username": "tetetete",
+      "tweet": "teste14"
+    },
+    {
+      "username": "tetetete",
+      "tweet": "teste15"
+    },
+    {
+      "username": "tetetete",
+      "tweet": "teste16"
+    },
+    {
+      "username": "tetetete",
+      "tweet": "teste17"
+    },
+    {
+      "username": "tetetete",
+      "tweet": "teste18"
+    },
+    {
+      "username": "tetetete",
+      "tweet": "teste19"
+    },
+    {
+      "username": "tetetete",
+      "tweet": "teste20"
+    },
+    {
+      "username": "tetetete",
+      "tweet": "teste21"
+    }
+  ]
+}
