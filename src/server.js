@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import fs from 'fs';
-import { request } from 'http';
 const PORT = 5000;
 const server = express();
 server.use([express.json(), cors()]);
@@ -42,12 +41,12 @@ server.get('/tweets/:username', (req, res) => {
 
 server.post('/tweets', (req, res) => {
     const { tweet } = req.body;
-    if (!tweet) {
+    const username = req.header('User');
+    if (!tweet || !username) {
         res.status(400).send('Todos os campos são obrigatórios!')
         return;
     }
-
-    database.tweets.push(req.body);
+    database.tweets.push({tweet, username});
     fs.writeFileSync("dataBase.json", JSON.stringify(database, null, 2));
     res.status(201).send('OK');
 });

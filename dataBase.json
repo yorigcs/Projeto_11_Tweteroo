@@ -1,114 +1,62 @@
 {
   "user": [
     {
-      "username": "yori",
-      "avatar": "https://i.imgur.com/BptQM1p.png"
-    },
-    {
-      "username": "teste",
-      "avatar": "https://i.imgur.com/BptQM1p.png"
-    },
-    {
-      "username": "yori2",
-      "avatar": "https://i.imgur.com/BptQM1p.png"
-    },
-    {
-      "username": "teste3",
-      "avatar": "https://i.imgur.com/BptQM1p.png"
-    },
-    {
-      "username": "tetetete",
+      "username": "Teste",
       "avatar": "https://i.imgur.com/BptQM1p.png"
     },
     {
       "username": "yori",
-      "avatar": "123"
+      "avatar": "https://i.imgur.com/BptQM1p.png"
     }
   ],
   "tweets": [
     {
-      "username": "teste",
-      "tweet": "teste1"
+      "tweet": "teste",
+      "username": "Teste"
     },
     {
-      "username": "teste",
-      "tweet": "teste2"
+      "tweet": "TesteDePaginas1",
+      "username": "yori"
     },
     {
-      "username": "teste",
-      "tweet": "teste3"
+      "tweet": "TesteDePaginas2",
+      "username": "yori"
     },
     {
-      "username": "yori2",
-      "tweet": "teste4"
+      "tweet": "TesteDePaginas3",
+      "username": "yori"
     },
     {
-      "username": "yori2",
-      "tweet": "teste5"
+      "tweet": "TesteDePaginas4",
+      "username": "yori"
     },
     {
-      "username": "yori2",
-      "tweet": "teste6"
+      "tweet": "TesteDePaginas5",
+      "username": "yori"
     },
     {
-      "username": "yori2",
-      "tweet": "teste7"
+      "tweet": "TesteDePaginas6",
+      "username": "yori"
     },
     {
-      "username": "yori2",
-      "tweet": "teste8"
+      "tweet": "TesteDePaginas7",
+      "username": "yori"
     },
     {
-      "username": "yori2",
-      "tweet": "teste9"
+      "tweet": "TesteDePaginas8",
+      "username": "yori"
     },
     {
-      "username": "yori2",
-      "tweet": "teste10"
+      "tweet": "TesteDePaginas9",
+      "username": "yori"
     },
     {
-      "username": "yori2",
-      "tweet": "teste11"
+      "tweet": "TesteDePaginas10",
+      "username": "yori"
     },
     {
-      "username": "tetetete",
-      "tweet": "teste12"
-    },
-    {
-      "username": "tetetete",
-      "tweet": "teste13"
-    },
-    {
-      "username": "tetetete",
-      "tweet": "teste14"
-    },
-    {
-      "username": "tetetete",
-      "tweet": "teste15"
-    },
-    {
-      "username": "tetetete",
-      "tweet": "teste16"
-    },
-    {
-      "username": "tetetete",
-      "tweet": "teste17"
-    },
-    {
-      "username": "tetetete",
-      "tweet": "teste18"
-    },
-    {
-      "username": "tetetete",
-      "tweet": "teste19"
-    },
-    {
-      "username": "tetetete",
-      "tweet": "teste20"
-    },
-    {
-      "username": "tetetete",
-      "tweet": "teste21"
+      "tweet": "TesteDePaginas11",
+      "username": "yori"
     }
   ]
 }
