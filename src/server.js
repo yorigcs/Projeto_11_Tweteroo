@@ -11,10 +11,10 @@ const getLastNTweets = (page) => {
     const tweets = [...database.tweets];
     const lastsTweets = [];
 
-    let from = (page -1)*10;
+    let from = (page - 1) * 10;
     let to = from + 10;
-    
-    tweets.reverse().slice(from,to).forEach(tweet => {
+
+    tweets.reverse().slice(from, to).forEach(tweet => {
         const image = database.user.find(user => user.username === tweet.username).avatar;
         lastsTweets.push({ ...tweet, avatar: image });
     })
@@ -23,7 +23,7 @@ const getLastNTweets = (page) => {
 
 server.get('/tweets', (req, res) => {
     const page = Number(req.query.page);
-    if(isNaN(page) || page < 1) {
+    if (isNaN(page) || page < 1) {
         res.status(400).send('Informe uma página válida!');
         return;
     }
@@ -34,7 +34,6 @@ server.get('/tweets/:username', (req, res) => {
     const userTweets = database.tweets.filter(tweet => tweet.username === req.params.username).map(tweet => {
         return { ...tweet, ...database.user.find(user => user.username === tweet.username) };
     });
-    console.log(userTweets)
     res.send(userTweets);
 
 });
@@ -46,7 +45,7 @@ server.post('/tweets', (req, res) => {
         res.status(400).send('Todos os campos são obrigatórios!')
         return;
     }
-    database.tweets.push({tweet, username});
+    database.tweets.push({ tweet, username });
     fs.writeFileSync("dataBase.json", JSON.stringify(database, null, 2));
     res.status(201).send('OK');
 });
@@ -57,10 +56,10 @@ server.post('/sign-up', (req, res) => {
         res.status(400).send('Todos os campos são obrigatórios!')
         return;
     }
-    // if (database.user.find(user => user.username === username)) {
-    //     res.status(400).send('Já há um usuário cadastrado com esse nome!')
-    //     return;
-    // }
+    if (database.user.find(user => user.username === username)) {
+        res.status(400).send('Já há um usuário cadastrado com esse nome!')
+        return;
+    }
 
     database.user.push(req.body);
     fs.writeFileSync("dataBase.json", JSON.stringify(database, null, 2));
